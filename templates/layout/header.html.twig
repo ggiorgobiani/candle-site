@@ -1,0 +1,66 @@
+<header>
+  <nav class="navbar navbar-expand-md bg-white sticky-top navbar-light shadow-sm">
+    <div class="container">
+    <div class="logoDiv">
+            <img src="{{ asset('uploads/images/logo.png') }}" height="100px" width="70px" alt="logoNav">
+          </div>
+        <div class="nav-toggler">
+        <span id="menuNav" class="navbar-toggler">MENU</span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        </div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item mx-3 my-4 text-uppercase active">
+             {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'homepage',
+                            label: 'Accueil'
+                        }
+                     %} 
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle mx-3 my-4 text-uppercase" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              catalogue
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+              <li class="dropdown-item">
+              {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'poured',
+                            label: 'Bougie Coulée'
+                        }
+                     %}</li>
+              <li class="dropdown-item">
+              {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'fondant',
+                            label: 'Fondants'
+                        }
+                     %}</li>
+            </ul>
+          </li>
+          <li class="nav-item mx-3 my-4 text-uppercase">
+            {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'about',
+                            label: 'A propos de nous'
+                        }
+                     %}
+          </li>
+        </ul>
+        
+        <ul class="navbar-nav ms-auto ">
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="cart.php"><i class="fa-solid fa-cart-shopping me-1"></i> Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link mx-2 text-uppercase" href="account.php"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

@@ -1,0 +1,80 @@
+
+
+/*  c'est pour fixer le header en haut et le footer en bas, 
+il faut mettre le flex-grow sur le main div pour occuper toute la place de page
+body {
+  min-height: 100vh;
+  display:flex;
+  flex-direction:column;
+}
+.main-content {
+  flex-grow:1;
+} */
+
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  footer{
+    margin-top: auto;
+  }
+  #menuNav{
+      border: none;
+  }
+  #logoNav{
+    border: none;
+  }
+  .carousel {
+      width: 100%;
+      margin: auto;
+      margin-bottom: 9rem;
+  }
+  .carousel-item img {
+      height: 700px;
+      width: 100%;
+  }
+  .divCatalogs {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      max-width: 100%;
+    }
+    .divCatalogs > div {
+      width: 200px;
+      text-align: center;
+      margin: 0rem 2rem 12rem 2rem;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      background-color: rgb(247, 179, 9);  
+    }
+    .divCatalogs > div:hover {
+      transform: scale(1.1);
+    }
+    .divCatalogs > div img {
+      width: 100%;
+      height: 200px;
+    }
+  .aboutSection{
+    padding: 2rem 2rem 2rem 2rem;
+    margin-bottom: 12rem;
+    }
+  .aboutText{
+    width: 500px;
+  }
+  .aboutText p{
+   padding-top: 50px;
+  }
+  .aboutImg  img{
+    width: 600px ;
+    height: 450px ;
+    transform: translateX(-40%);
+    transition: transform 1s ease;
+  }
+  .aboutImg img.move {
+    transform: translateX(10%);
+  }
+  .pouredCatalogNode, .fondantCatalogNode{
+    cursor: pointer;
+  }
+  
