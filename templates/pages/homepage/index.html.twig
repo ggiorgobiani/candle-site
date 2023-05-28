@@ -10,13 +10,13 @@
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-      <img src="{{ asset('uploads/images/img2carousel.jpg') }}" class="d-block " alt="">
+      <img src="{{ asset('build/images/img2carousel.jpg') }}" class="d-block " alt="">
       </div>
       <div class="carousel-item">
-      <img src="{{ asset('uploads/images/img1carousel.jpg') }}" class="d-block " alt="">
+      <img src="{{ asset('build/images/img1carousel.jpg') }}" class="d-block " alt="">
       </div>
       <div class="carousel-item">
-      <img src="{{ asset('uploads/images/img3carousel.jpg') }}" class="d-block " alt="">
+      <img src="{{ asset('build/images/img3carousel.jpg') }}" class="d-block " alt="">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
@@ -29,6 +29,10 @@
     </button>
   </div>
 
+
+
+      <div id="productCatalog">
+      </div>
 
 
   <section class="container text-center aboutSection">
@@ -51,10 +55,15 @@
 
   
   <div class="aboutImg col">
-    <img src="{{ asset('uploads/images/candle-making.jpg') }}" alt="About Image">
+    <img src="{{ asset('build/images/candle-making.jpg') }}" alt="About Image">
   </div>
 </div>
 
 </section>
 
 {% endblock %}
+
+
+ {% block javascripts %}
+            {{ encore_entry_script_tags('homepage') }}
+        {% endblock %}
