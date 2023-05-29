@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BasketController!{% endblock %}
+
+{% block body %}
+<div class="container mainDiv">
+    <table>
+        <tr>
+            <th>Produit</th>
+            <th>Quantité</th>
+            <th>Total</th>
+        </tr>
+        <tr>
+            <td class="productInfo">
+
+            </td>
+            
+            <td class="productQuantity">
+                
+            </td>
+            <td class="productTotalPrice">
+                
+            </td>
+        </tr>
+
+
+
+
+    </table>
+
+    <div class="panierVide"> 
+        <img src="{{ asset('build/images/panier-vide.png') }}" alt="panier vide">
+        <h2 >Votre panier est vide</h2>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AccountController!{% endblock %}
+
+{% block body %}
+<div class="account-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 imgDiv">
+                <img src="{{ asset('build/images/logo.png') }}" alt="logo accaunt page">
+            </div>
+            <div class="col-6" id="accFormDiv">
+                <div class="form-container">
+                    <div class="form-btn">
+                        <span onclick="login()">Connexion</span>
+                        <span onclick="register()">Inscription</span>
+                        <hr id="indicator">
+                    </div>
+                    <form id="loginForm">
+                        <input type="text" placeholder="username">
+                        <input type="password" placeholder="password">
+                        <button type="submit" class="btn">Connexion </button>
+                        <a href="">Mot de pass oublié?</a>
+                    </form>
+                    <form id="regForm">
+                        <input type="text" placeholder="username">
+                        <input type="email" placeholder="Email">
+                        <input type="password" placeholder="password">
+                        <button type="submit" class="btn">Inscription </button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block javascript %}
+<script src="{{ asset('account.js') }}"></script>
+{% endblock %}

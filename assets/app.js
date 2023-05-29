@@ -8,6 +8,10 @@
 // any CSS you import will output into a single css file (app.css in this case)
 import './../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './styles/app.css';
+import './styles/homepage.css';
+import './styles/aboutUs.css';
+import './styles/account.css';
+import './styles/basket.css';
 
 
 

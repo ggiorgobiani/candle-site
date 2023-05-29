@@ -1,3 +1,4 @@
+
 <header>
   <nav class="navbar navbar-expand-md bg-white sticky-top navbar-light shadow-sm">
     <div class="container">
@@ -52,13 +53,23 @@
           </li>
         </ul>
         
-        <ul class="navbar-nav ms-auto ">
-          <li class="nav-item">
-            <a class="nav-link mx-2 text-uppercase" href="cart.php"><i class="fa-solid fa-cart-shopping me-1"></i> Cart</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link mx-2 text-uppercase" href="account.php"><i class="fa-solid fa-circle-user me-1"></i> Account</a>
-          </li>
+        <ul class="navbar-nav ms-auto" id="accBasket">
+          <li class="nav-item mx-2 text-uppercase">
+            {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'basket',
+                            label: 'Panier'
+                        }
+                     %}
+          </li><i class="fa-solid fa-cart-shopping me-1"></i>
+          <li class="nav-item mx-2 text-uppercase">
+            {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'account',
+                            label: 'S\'identifier'
+                        }
+                     %}
+          </li><i class="fa-solid fa-circle-user me-1"></i>
         </ul>
       </div>
     </div>

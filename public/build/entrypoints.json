@@ -19,6 +19,15 @@
       "css": [
         "/build/homepage.css"
       ]
+    },
+    "account": {
+      "js": [
+        "/build/runtime.js",
+        "/build/account.js"
+      ],
+      "css": [
+        "/build/account.css"
+      ]
     }
   }
 }

@@ -1,0 +1,169 @@
+@keyframes display {
+    0% {
+      transform: translateX(200px);
+      opacity: 0;
+    }
+    10% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(-200px);
+      opacity: 0;
+    }
+  }
+  
+  .mainDivAboutPage{
+    margin: 15vh 0 20vh 0;
+  }
+  .textAboutPage{
+    padding-left: 40px;
+    text-align: center;
+    
+  }
+  .textAboutPage > h1{
+    margin: 40px;
+  }
+  .textAboutPage > p {
+    padding: 0px 50px 0 70px; 
+  }
+  .pic-ctn {
+    position: relative;
+    width: 300px;
+    height: 300px; 
+  }
+  
+  .pic-ctn > img {
+    position: absolute;
+    padding: auto;
+    height: 500px;
+    width: 600px;
+    left: calc(30% - 100px);
+    opacity: 0;
+    animation: display 20s infinite;
+    
+  }
+  
+  img:nth-child(2) {
+    animation-delay: 4s;
+  }
+  img:nth-child(3) {
+    animation-delay: 8s;
+  }
+  img:nth-child(4) {
+    animation-delay: 12s;
+  }
+  img:nth-child(5) {
+    animation-delay: 16s;
+  }
+  
+  
+  footer{
+    margin-top: auto;
+}
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .mainDivAboutPage{
+    flex-direction: column;
+    align-items: center;
+  }
+  .pic-ctn {
+    margin-top: 1vh;  
+  }
+  .pic-ctn > img{
+    width: 350px;
+    height: 350px;
+  }
+  .textAboutPage{
+    padding-left: 0;
+    text-align: center;
+    margin-top: 6vh;
+    
+  }
+  .textAboutPage > p {
+    padding: 0; 
+    margin: 0 50px 0 50px;
+  }
+  .textAboutPage > h1{
+    margin: 20px;
+  }
+
+  .pic-ctn{
+   
+    margin-bottom: 20rem;
+  }
+
+}
+
+
+
+
+@media (min-width: 768px) {
+  .mainDivAboutPage{
+    flex-direction: row;
+  }
+  .pic-ctn > img{
+    width: 350px;
+    height: 350px;
+  }
+  .textAboutPage{
+    padding-left: 0;
+    margin-top: 8vh;
+    
+  }
+  .textAboutPage > p {
+    padding: 0px 10px 0 10px; 
+  }
+  .textAboutPage > h1{
+    margin: 30px;
+  }
+}
+
+@media (min-width: 992px) {
+  .pic-ctn > img{
+    width: 400px;
+    height: 400px;
+  }
+  .textAboutPage{
+    padding-left: 0;
+    margin-top: 8vh;
+  }
+  
+}
+
+
+@media (min-width: 1200px) {
+  
+  .pic-ctn > img{
+    height: 450px;
+    width: 500px;
+  }
+ 
+  .textAboutPage > p {
+    padding: 0px 30px 0 30px; 
+  }
+}
+
+@media (min-width: 1400px) {
+  .pic-ctn > img{
+    height: 500px;
+    width: 600px;
+  }
+  
+}

@@ -13,7 +13,7 @@ let divCatalogPoured = document.createElement('div');
 let imgPouredNode = document.createElement('img');
 let titleCatalogPoured = document.createElement('h5');
 let titleCatalogPouredText = document.createTextNode('Bougie coulée');
-    imgPouredNode.src = 'img/coule.jpg';
+    imgPouredNode.src = './../public/build/images/imgproduct/coule.jpg';
     divCatalogPoured.classList.add('pouredCatalogNode');
     divCatalogPoured.appendChild(imgPouredNode);
     divCatalogPoured.appendChild(titleCatalogPoured);
