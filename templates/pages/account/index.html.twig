@@ -36,6 +36,7 @@
 </div>
 {% endblock %}
 
-{% block javascript %}
-<script src="{{ asset('account.js') }}"></script>
-{% endblock %}
+{% block javascripts %}
+            {{ encore_entry_script_tags('account') }}
+            {{ parent() }}
+        {% endblock %}

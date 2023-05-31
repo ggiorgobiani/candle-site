@@ -31,8 +31,17 @@
 
 
 
-      <div id="productCatalog">
-      </div>
+<div class="divCatalogs">
+  <div class="pouredCatalogNode">
+    <img src="{{ asset('build/images/coule.jpg') }}" alt="catalog coulée">
+    <h5>Bougie Coulée</h5>
+  </div>
+  <div class="fondantCatalogNode">
+    <img src="{{ asset('build/images/fondant.jpg') }}" alt="catalog fondant">
+    <h5>Fondants</h5>
+  </div>
+</div>
+    
 
 
   <section class="container text-center aboutSection">
@@ -66,4 +75,5 @@
 
           {% block javascripts %}
             {{ encore_entry_script_tags('homepage') }}
+            {{ parent() }}
         {% endblock %}

@@ -23,7 +23,7 @@ class Product
     #[ORM\Column(name: "price", type: Types::FLOAT, nullable: false)]
     private ?float $price = null;
 
-    #[ORM\Column(name: "quantity", type: Types::INT, nullable: false)]
+    #[ORM\Column(name: "quantity", nullable: false)]
     private ?int $quantity = null;
 
     #[ORM\Column(name: "image", type: Types::STRING, length: 40, nullable: false)]

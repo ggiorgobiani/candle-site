@@ -12,7 +12,10 @@ class HomepageController extends AbstractController
     public function index(): Response
     {
         return $this->render('pages/homepage/index.html.twig', [
-            'controller_name' => 'HomepageController',
+            
         ]);
     }
+
+  
+
 }
