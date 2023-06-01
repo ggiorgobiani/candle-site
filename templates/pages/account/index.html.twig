@@ -3,7 +3,7 @@
 {% block title %}Hello AccountController!{% endblock %}
 
 {% block body %}
-<div class="account-page">
+<div class="account-page" data-controller="account">
     <div class="container">
         <div class="row">
             <div class="col-6 imgDiv">
@@ -12,8 +12,8 @@
             <div class="col-6" id="accFormDiv">
                 <div class="form-container">
                     <div class="form-btn">
-                        <span onclick="login()">Connexion</span>
-                        <span onclick="register()">Inscription</span>
+                        <span data-action="click->account#showLogin">Connexion</span>
+                        <span data-action="click->account#showReg">Inscription</span>
                         <hr id="indicator">
                     </div>
                     <form id="loginForm">

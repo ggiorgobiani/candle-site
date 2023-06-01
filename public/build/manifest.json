@@ -6,8 +6,10 @@
   "build/account.css": "/build/account.css",
   "build/account.js": "/build/account.js",
   "build/runtime.js": "/build/runtime.js",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-763091.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-763091.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-763091.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-763091.js",
+  "build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js": "/build/vendors-node_modules_symfony_stimulus-bridge_dist_index_js-node_modules_core-js_modules_es_da-03e5c3.js",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_bootstrap_dist_js_bo-e163dd.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_bootstrap_dist_js_bo-e163dd.css",
+  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_bootstrap_dist_js_bo-e163dd.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_bootstrap_dist_js_bo-e163dd.js",
+  "build/node_modules_symfony_stimulus-bridge_dist_webpack_loader_js_assets_controllers_json-assets_bo-de38ef.js": "/build/node_modules_symfony_stimulus-bridge_dist_webpack_loader_js_assets_controllers_json-assets_bo-de38ef.js",
   "build/images/fondant.jpg": "/build/images/fondant.bf80c3f9.jpg",
   "build/images/imgCatalog/Fondants/fondant1.JPG": "/build/images/imgCatalog/Fondants/fondant1.bf80c3f9.JPG",
   "build/images/imgCatalog/Spring blossom collection/springBlossomCollection1.jpg": "/build/images/imgCatalog/Spring blossom collection/springBlossomCollection1.4add4482.jpg",
@@ -87,10 +89,5 @@
   "build/images/logo.png": "/build/images/logo.c00b9b50.png",
   "build/fonts/fa-v4compatibility.ttf": "/build/fonts/fa-v4compatibility.0e3a648b.ttf",
   "build/images/logo.jpg": "/build/images/logo.bcc3b750.jpg",
-  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.68577e40.woff2",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-e87eb4.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-e87eb4.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-e87eb4.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-e87eb4.js",
-  "build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_crea-5b582c.js": "/build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_crea-5b582c.js",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-a93a91.css": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-a93a91.css",
-  "build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-a93a91.js": "/build/vendors-node_modules_fortawesome_fontawesome-free_js_all_js-node_modules_symfony_stimulus-bri-a93a91.js"
+  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.68577e40.woff2"
 }
