@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PouredCandle{% endblock %}
+
+{% block body %}
+    <h1>PouredCandle</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ poured_candle.id }}</td>
+            </tr>
+            <tr>
+                <th>Name</th>
+                <td>{{ poured_candle.name }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ poured_candle.description }}</td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td>{{ poured_candle.price }}</td>
+            </tr>
+            <tr>
+                <th>Quantity</th>
+                <td>{{ poured_candle.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ poured_candle.image }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_poured_candle_index') }}">back to list</a>
+
+    <a href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}">edit</a>
+
+    {{ include('poured_candle/_delete_form.html.twig') }}
+{% endblock %}

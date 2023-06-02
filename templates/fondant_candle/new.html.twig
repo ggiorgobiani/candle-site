@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+
+{% set page_title = "Ajouter nouveau produit Fondant" %}
+
+{% block title %}{{ page_title }} - {{ parent() }}{% endblock %}
+
+
+{% block body %}
+    <header class="page-header col-md-8 offset-md-2">
+        <h2 class="page-title">{{ page_title }}</h2>
+    </header>
+<main class="page-content">
+    
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+
+            {% include "fondant_candle/_form.html.twig" with {
+                form: form
+            } only %}
+
+        </div>
+    </div>
+
+</main>
+
+<div class="col-md-8 offset-md-2">
+    <a href="{{ path('app_fondant_candle_index') }}">back to list</a>
+    </div>
+
+{% endblock %}
