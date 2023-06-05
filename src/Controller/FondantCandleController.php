@@ -17,7 +17,7 @@ class FondantCandleController extends AbstractController
     #[Route('/', name: 'app_fondant_candle_index', methods: ['GET'])]
     public function index(FondantCandleRepository $fondantCandleRepository): Response
     {
-        return $this->render('fondant_candle/index.html.twig', [
+        return $this->render('pages/fondant_candle/index.html.twig', [
             'fondant_candles' => $fondantCandleRepository->findAll(),
         ]);
     }
@@ -72,7 +72,7 @@ class FondantCandleController extends AbstractController
         
         }
 
-        return $this->renderForm('fondant_candle/new.html.twig', [
+        return $this->renderForm('pages/fondant_candle/new.html.twig', [
             'fondant_candle' => $fondantCandle,
             'form' => $form,
         ]);
@@ -81,7 +81,7 @@ class FondantCandleController extends AbstractController
     #[Route('/{id}', name: 'app_fondant_candle_show', methods: ['GET'])]
     public function show(FondantCandle $fondantCandle): Response
     {
-        return $this->render('fondant_candle/show.html.twig', [
+        return $this->render('pages/fondant_candle/show.html.twig', [
             'fondant_candle' => $fondantCandle,
         ]);
     }
@@ -98,7 +98,7 @@ class FondantCandleController extends AbstractController
             return $this->redirectToRoute('app_fondant_candle_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('fondant_candle/edit.html.twig', [
+        return $this->renderForm('pages/fondant_candle/edit.html.twig', [
             'fondant_candle' => $fondantCandle,
             'form' => $form,
         ]);

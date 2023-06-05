@@ -17,7 +17,7 @@ class PouredCandleController extends AbstractController
     #[Route('/', name: 'app_poured_candle_index', methods: ['GET'])]
     public function index(PouredCandleRepository $pouredCandleRepository): Response
     {
-        return $this->render('poured_candle/index.html.twig', [
+        return $this->render('pages/poured_candle/index.html.twig', [
             'poured_candles' => $pouredCandleRepository->findAll(),
         ]);
     }
@@ -69,7 +69,7 @@ class PouredCandleController extends AbstractController
             return $this->redirectToRoute('app_poured_candle_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('poured_candle/new.html.twig', [
+        return $this->renderForm('pages/poured_candle/new.html.twig', [
             'poured_candle' => $pouredCandle,
             'form' => $form,
         ]);
@@ -78,7 +78,7 @@ class PouredCandleController extends AbstractController
     #[Route('/{id}', name: 'app_poured_candle_show', methods: ['GET'])]
     public function show(PouredCandle $pouredCandle): Response
     {
-        return $this->render('poured_candle/show.html.twig', [
+        return $this->render('pages/poured_candle/show.html.twig', [
             'poured_candle' => $pouredCandle,
         ]);
     }
@@ -95,7 +95,7 @@ class PouredCandleController extends AbstractController
             return $this->redirectToRoute('app_poured_candle_index', [], Response::HTTP_SEE_OTHER);
         }
 
-        return $this->renderForm('poured_candle/edit.html.twig', [
+        return $this->renderForm('pages/poured_candle/edit.html.twig', [
             'poured_candle' => $pouredCandle,
             'form' => $form,
         ]);

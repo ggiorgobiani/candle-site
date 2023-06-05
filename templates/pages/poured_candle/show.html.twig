@@ -30,6 +30,7 @@
             <tr>
                 <th>Image</th>
                 <td>{{ poured_candle.image }}</td>
+                <img src="/uploads/{{ poured_candle.image }}" style="width: 200px" alt="">
             </tr>
         </tbody>
     </table>
@@ -38,5 +39,5 @@
 
     <a href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}">edit</a>
 
-    {{ include('poured_candle/_delete_form.html.twig') }}
+    {{ include('pages/poured_candle/_delete_form.html.twig') }}
 {% endblock %}
