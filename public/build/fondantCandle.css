@@ -1,0 +1,21 @@
+/*!************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/fondantCandle.css ***!
+  \************************************************************************************************************************/
+.card {
+    width: 300px;
+    margin: auto;
+}
+.imgCard {
+    width: 250px;
+    height: auto;
+}
+
+.fondantCard{
+
+    cursor: pointer;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiZm9uZGFudENhbmRsZS5jc3MiLCJtYXBwaW5ncyI6Ijs7O0FBQUE7SUFDSSxZQUFZO0lBQ1osWUFBWTtBQUNoQjtBQUNBO0lBQ0ksWUFBWTtJQUNaLFlBQVk7QUFDaEI7O0FBRUE7O0lBRUksZUFBZTtJQUNmLHdDQUF3QztJQUN4QyxhQUFhOztBQUVqQixDIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vLy4vYXNzZXRzL3N0eWxlcy9mb25kYW50Q2FuZGxlLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZCB7XHJcbiAgICB3aWR0aDogMzAwcHg7XHJcbiAgICBtYXJnaW46IGF1dG87XHJcbn1cclxuLmltZ0NhcmQge1xyXG4gICAgd2lkdGg6IDI1MHB4O1xyXG4gICAgaGVpZ2h0OiBhdXRvO1xyXG59XHJcblxyXG4uZm9uZGFudENhcmR7XHJcblxyXG4gICAgY3Vyc29yOiBwb2ludGVyO1xyXG4gICAgYm94LXNoYWRvdzogMCA3cHggOHB4IHJnYmEoMCwgMCwgMCwgMC4yKTtcclxuICAgIGhlaWdodDogNDAwcHg7XHJcbiAgICBcclxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

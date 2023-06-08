@@ -12,6 +12,9 @@ import './styles/homepage.css';
 import './styles/aboutUs.css';
 import './styles/account.css';
 import './styles/basket.css';
+import './styles/pouredCandle.css';
+import './styles/fondantCandle.css';
+
 
 
 

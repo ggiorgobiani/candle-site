@@ -38,7 +38,7 @@ form input {
     padding: 0 10px;
     border: 1px solid #ccc;
 }
-form .btn{
+.btnInscription, .btnConnection{
     width: 100%;
     border: none;
     cursor: pointer;
@@ -46,10 +46,16 @@ form .btn{
     background: #90f1a8;
     border-radius: 30px;
 }
-form .btn:hover{
+.btnConnection:hover{
     background: #64df83;
 }
-form .btn:focus{
+.btnConnection:focus{
+    outline: none;
+}
+.btnInscription:hover{
+    background: #64df83;
+}
+.btnInscription:focus{
     outline: none;
 }
 #loginForm{

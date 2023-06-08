@@ -5,39 +5,21 @@
 {% block body %}
     <h1>PouredCandle</h1>
 
-    <table class="table">
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ poured_candle.id }}</td>
-            </tr>
-            <tr>
-                <th>Name</th>
-                <td>{{ poured_candle.name }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ poured_candle.description }}</td>
-            </tr>
-            <tr>
-                <th>Price</th>
-                <td>{{ poured_candle.price }}</td>
-            </tr>
-            <tr>
-                <th>Quantity</th>
-                <td>{{ poured_candle.quantity }}</td>
-            </tr>
-            <tr>
-                <th>Image</th>
-                <td>{{ poured_candle.image }}</td>
-                <img src="/uploads/{{ poured_candle.image }}" style="width: 200px" alt="">
-            </tr>
-        </tbody>
-    </table>
+    <div class="container">
+        <img class="imgShowProductDescription" src="/uploads/{{ poured_candle.image }}" style="width: 350px; float: left;" alt="">
+    </div>    
+    <div class="info-container">
+        <div><strong>Name:</strong> {{ poured_candle.name }}</div>
+        <div><strong>Description:</strong> {{ poured_candle.description }}</div>
+        <div><strong>Price:</strong> {{ poured_candle.price }}</div>
+        <a class="btn addToCardBtn" href="{{ path('app_poured_candle_index') }}">Ajouter au panier</a>
+    </div>
 
-    <a href="{{ path('app_poured_candle_index') }}">back to list</a>
+    <div class="btnListShowDetails">
+    <a class="btn btn-warning" href="{{ path('app_poured_candle_index') }}">back to list</a>
 
-    <a href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}">edit</a>
-
+    <a class="btn btn-warning" href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}">edit</a>
+   
     {{ include('pages/poured_candle/_delete_form.html.twig') }}
+    </div>
 {% endblock %}

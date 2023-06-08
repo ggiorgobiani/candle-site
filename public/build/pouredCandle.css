@@ -1,0 +1,36 @@
+/*!***********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/pouredCandle.css ***!
+  \***********************************************************************************************************************/
+.card-img-top {
+    width: 200px;
+    margin: auto;
+}
+
+
+.info-container{
+    margin: 110px 200px 0 400px;
+}
+
+.info-container div{
+    margin: 10px;
+}
+.btnListShowDetails{
+    margin-top: 100px;
+}
+
+.addToCardBtn {
+    background: #90f1a8;
+}
+.addToCardBtn:hover{
+    background: #64df83;
+}
+.addToCardBtn:focus{
+    outline: none;
+}
+.pouredCard {
+    cursor: pointer;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    height: 400px;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicG91cmVkQ2FuZGxlLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtJQUNJLFlBQVk7SUFDWixZQUFZO0FBQ2hCOzs7QUFHQTtJQUNJLDJCQUEyQjtBQUMvQjs7QUFFQTtJQUNJLFlBQVk7QUFDaEI7QUFDQTtJQUNJLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLG1CQUFtQjtBQUN2QjtBQUNBO0lBQ0ksbUJBQW1CO0FBQ3ZCO0FBQ0E7SUFDSSxhQUFhO0FBQ2pCO0FBQ0E7SUFDSSxlQUFlO0lBQ2Ysd0NBQXdDO0lBQ3hDLGFBQWE7QUFDakIsQyIsInNvdXJjZXMiOlsid2VicGFjazovLy8uL2Fzc2V0cy9zdHlsZXMvcG91cmVkQ2FuZGxlLmNzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIuY2FyZC1pbWctdG9wIHtcclxuICAgIHdpZHRoOiAyMDBweDtcclxuICAgIG1hcmdpbjogYXV0bztcclxufVxyXG5cclxuXHJcbi5pbmZvLWNvbnRhaW5lcntcclxuICAgIG1hcmdpbjogMTEwcHggMjAwcHggMCA0MDBweDtcclxufVxyXG5cclxuLmluZm8tY29udGFpbmVyIGRpdntcclxuICAgIG1hcmdpbjogMTBweDtcclxufVxyXG4uYnRuTGlzdFNob3dEZXRhaWxze1xyXG4gICAgbWFyZ2luLXRvcDogMTAwcHg7XHJcbn1cclxuXHJcbi5hZGRUb0NhcmRCdG4ge1xyXG4gICAgYmFja2dyb3VuZDogIzkwZjFhODtcclxufVxyXG4uYWRkVG9DYXJkQnRuOmhvdmVye1xyXG4gICAgYmFja2dyb3VuZDogIzY0ZGY4MztcclxufVxyXG4uYWRkVG9DYXJkQnRuOmZvY3Vze1xyXG4gICAgb3V0bGluZTogbm9uZTtcclxufVxyXG4ucG91cmVkQ2FyZCB7XHJcbiAgICBjdXJzb3I6IHBvaW50ZXI7XHJcbiAgICBib3gtc2hhZG93OiAwIDdweCA4cHggcmdiYSgwLCAwLCAwLCAwLjIpO1xyXG4gICAgaGVpZ2h0OiA0MDBweDtcclxufSJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

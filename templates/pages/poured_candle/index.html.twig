@@ -3,43 +3,33 @@
 {% block title %}PouredCandle index{% endblock %}
 
 {% block body %}
-    <h1>PouredCandle index</h1>
+    <h1>Bougies coulées</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                {# <th>Id</th> #}
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                {# <th>Quantity</th> #}
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for poured_candle in poured_candles %}
-            <tr>
-                {# <td>{{ poured_candle.id }}</td> #}
-                <td>{{ poured_candle.name }}</td>
-                <td>{{ poured_candle.description }}</td>
-                <td>{{ poured_candle.price }}</td>
-                {# <td>{{ poured_candle.quantity }}</td> #}
-                <td>
-                <img src="/uploads/{{ poured_candle.image }}" style="width: 200px" alt="">
-                </td>
-                <td>
-                    <a href="{{ path('app_poured_candle_show', {'id': poured_candle.id}) }}">show</a>
-                    <a href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_poured_candle_new') }}">Create new</a>
+ <div class="row row-cols-3">
+  {% for poured_candle in poured_candles %}
+    <div class="col" data-controller="pouredCandle">
+      <div class="card pouredCard my-4">
+        <img class="card-img-top" src="/uploads/{{ poured_candle.image }}" alt="Candle Image">
+        <div class="card-body">
+          <h4 class="card-title">Collection: {{ poured_candle.name }}</h4>
+          {# <p class="card-text">Description: {{ poured_candle.description }}</p> #}
+          <p class="card-text">Price: {{ poured_candle.price }}</p>
+          <a href="{{ path('app_poured_candle_show', {'id': poured_candle.id}) }}" class="btn btn-primary">Show Details</a>
+          <a href="{{ path('app_poured_candle_edit', {'id': poured_candle.id}) }}" class="btn btn-secondary">Edit</a>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<a class="btn btn-secondary" href="{{ path('app_poured_candle_new') }}">Create new</a>
 {% endblock %}
+
+
+
+
+          {% block javascripts %}
+            {{ encore_entry_script_tags('pouredCandle') }}
+            {{ parent() }}
+        {% endblock %}

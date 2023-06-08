@@ -5,41 +5,34 @@
 {% block body %}
     <h1>FondantCandle index</h1>
 
-    <table class="table">
-        <thead>
-            <tr>
-                {# <th>Id</th> #}
-                <th>Name</th>
-                <th>Description</th>
-                <th>Price</th>
-                {# <th>Quantity</th> #}
-                <th>Image</th>
-                <th>actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        {% for fondant_candle in fondant_candles %}
-            <tr>
-                {# <td>{{ fondant_candle.id }}</td> #}
-                <td>{{ fondant_candle.name }}</td>
-                <td>{{ fondant_candle.description }}</td>
-                <td>{{ fondant_candle.price }}</td>
-                {# <td>{{ fondant_candle.quantity }}</td> #}
-                <td>
-                <img src="/uploads/{{ fondant_candle.image }}" style="width: 200px" alt="">
-                </td>
-                <td>
-                    <a href="{{ path('app_fondant_candle_show', {'id': fondant_candle.id}) }}">show</a>
-                    <a href="{{ path('app_fondant_candle_edit', {'id': fondant_candle.id}) }}">edit</a>
-                </td>
-            </tr>
-        {% else %}
-            <tr>
-                <td colspan="7">no records found</td>
-            </tr>
-        {% endfor %}
-        </tbody>
-    </table>
 
-    <a href="{{ path('app_fondant_candle_new') }}">Create new</a>
+
+   <div class="row row-cols-3">
+  {% for fondant_candle in fondant_candles %}
+    <div class="col" data-controller="fondantCandle">
+      <div class="card fondantCard my-4">
+        <img class="card-img-top imgCard" src="/uploads/{{ fondant_candle.image }}" alt="Candle Image">
+        <div class="card-body">
+          <h4 class="card-title">Collection: {{ fondant_candle.name }}</h4>
+          {# <p class="card-text">Description: {{ fondant_candle.description }}</p> #}
+          <p class="card-text">Price: {{ fondant_candle.price }}</p>
+          <div class="mt-auto">
+            <a href="{{ path('app_fondant_candle_show', {'id': fondant_candle.id}) }}" class="btn btn-primary">Show Details</a>
+            <a href="{{ path('app_fondant_candle_edit', {'id': fondant_candle.id}) }}" class="btn btn-secondary">Edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+<a class="btn btn-secondary" href="{{ path('app_fondant_candle_new') }}">Create new</a>
 {% endblock %}
+
+
+
+
+   {% block javascripts %}
+            {{ encore_entry_script_tags('fondantCandle') }}
+            {{ parent() }}
+        {% endblock %}

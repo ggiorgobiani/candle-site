@@ -1,0 +1,16 @@
+.card {
+    width: 300px;
+    margin: auto;
+}
+.imgCard {
+    width: 250px;
+    height: auto;
+}
+
+.fondantCard{
+
+    cursor: pointer;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    height: 400px;
+    
+}

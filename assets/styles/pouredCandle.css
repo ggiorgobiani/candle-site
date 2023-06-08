@@ -1,0 +1,31 @@
+.card-img-top {
+    width: 200px;
+    margin: auto;
+}
+
+
+.info-container{
+    margin: 110px 200px 0 400px;
+}
+
+.info-container div{
+    margin: 10px;
+}
+.btnListShowDetails{
+    margin-top: 100px;
+}
+
+.addToCardBtn {
+    background: #90f1a8;
+}
+.addToCardBtn:hover{
+    background: #64df83;
+}
+.addToCardBtn:focus{
+    outline: none;
+}
+.pouredCard {
+    cursor: pointer;
+    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    height: 400px;
+}
