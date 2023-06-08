@@ -3,25 +3,20 @@
 {% block title %}FondantCandle index{% endblock %}
 
 {% block body %}
-    <h1>FondantCandle index</h1>
+    <h1 class="titleFondantCandlePage">FondantCandle index</h1>
 
 
 
-   <div class="row row-cols-3">
+   <div class="row">
   {% for fondant_candle in fondant_candles %}
-    <div class="col" data-controller="fondantCandle">
-      <div class="card fondantCard my-4">
+    <div class="col-md-4">
+      <a href="{{ path('app_fondant_candle_show', {'id': fondant_candle.id}) }}" class="card my-4 fondantCard">
         <img class="card-img-top imgCard" src="/uploads/{{ fondant_candle.image }}" alt="Candle Image">
         <div class="card-body">
           <h4 class="card-title">Collection: {{ fondant_candle.name }}</h4>
-          {# <p class="card-text">Description: {{ fondant_candle.description }}</p> #}
           <p class="card-text">Price: {{ fondant_candle.price }}</p>
-          <div class="mt-auto">
-            <a href="{{ path('app_fondant_candle_show', {'id': fondant_candle.id}) }}" class="btn btn-primary">Show Details</a>
-            <a href="{{ path('app_fondant_candle_edit', {'id': fondant_candle.id}) }}" class="btn btn-secondary">Edit</a>
-          </div>
         </div>
-      </div>
+      </a>
     </div>
   {% endfor %}
 </div>
