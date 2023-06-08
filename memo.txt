@@ -1,0 +1,9 @@
+User
+firstName
+lastName
+password
+address
+number phone
+
+panier voir les relations entre les table poured et fondant 
+----penser a ajouté l'adress pour User

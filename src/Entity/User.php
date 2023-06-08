@@ -5,14 +5,30 @@ namespace App\Entity;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
-class User
+#[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
     private ?int $id = null;
+
+    #[ORM\Column(length: 180, unique: true)]
+    private ?string $email = null;
+
+    #[ORM\Column]
+    private array $roles = [];
+
+    /**
+     * @var string The hashed password
+     */
+    #[ORM\Column]
+    private ?string $password = null;
 
     #[ORM\Column(name: "firstname", type: Types::STRING,length: 60, nullable: true)]
     private ?string $firstname = null;
@@ -20,48 +36,106 @@ class User
     #[ORM\Column(name: "lastname", type: Types::STRING,length: 60, nullable: true)]
     private ?string $lastname = null;
 
-    #[ORM\Column(name: "email", type: Types::STRING, length: 255, nullable: false)]
-    private ?string $email = null;
 
-    #[ORM\Column(name: "password", type: Types::STRING, length: 255, nullable: false)]
-    private ?string $password = null;
-
-    #[ORM\Column(name: "address", type: Types::STRING, length: 255, nullable: true)]
-    private ?string $address = null;
+    #[ORM\Column(length: 81)]
+    private ?string $fullname = null;
 
     #[ORM\Column(name: "phone_number", type: Types::STRING, length: 20, nullable: true)]
     private ?string $phone_number = null;
 
-    #[ORM\Column(name: "username", length: 40, type: Types::STRING, nullable: false)]
-    private ?string $username = null;
+  
+
+
 
     public function getId(): ?int
     {
         return $this->id;
     }
+
     public function getEmail(): ?string
     {
         return $this->email;
     }
 
-    public function setEmail(string $email): self
+    public function setEmail(string $email): static
     {
         $this->email = $email;
 
         return $this;
     }
 
-    public function getPassword(): ?string
+    /**
+     * A visual identifier that represents this user.
+     *
+     * @see UserInterface
+     */
+    public function getUserIdentifier(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @deprecated since Symfony 5.3, use getUserIdentifier instead
+     */
+    public function getUsername(): string
+    {
+        return (string) $this->email;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function getRoles(): array
+    {
+        $roles = $this->roles;
+        // guarantee every user at least has ROLE_USER
+        $roles[] = 'ROLE_USER';
+
+        return array_unique($roles);
+    }
+
+    public function setRoles(array $roles): static
+    {
+        $this->roles = $roles;
+
+        return $this;
+    }
+
+    /**
+     * @see PasswordAuthenticatedUserInterface
+     */
+    public function getPassword(): string
     {
         return $this->password;
     }
 
-    public function setPassword(string $password): self
+    public function setPassword(string $password): static
     {
         $this->password = $password;
 
         return $this;
     }
+
+    /**
+     * Returning a salt is only needed, if you are not using a modern
+     * hashing algorithm (e.g. bcrypt or sodium) in your security.yaml.
+     *
+     * @see UserInterface
+     */
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    /**
+     * @see UserInterface
+     */
+    public function eraseCredentials(): void
+    {
+        // If you store any temporary, sensitive data on the user, clear it here
+        // $this->plainPassword = null;
+    }
+    
     public function getFirstname(): ?string
     {
         return $this->firstname;
@@ -86,17 +160,7 @@ class User
         return $this;
     }
 
-    public function getAddress(): ?string
-    {
-        return $this->address;
-    }
-
-    public function setAddress(?string $address): self
-    {
-        $this->address = $address;
-
-        return $this;
-    }
+  
 
     public function getPhoneNumber(): ?string
     {
@@ -109,17 +173,26 @@ class User
 
         return $this;
     }
-
-    public function getUsername(): ?string
+    public function getFullname(): ?string
     {
-        return $this->username;
+        return $this->fullname;
     }
 
-    public function setUsername(string $username): self
+    // NOTE: Automatiosation de la génération du "fullname"
+    // public function setFullname(string $fullname): self
+    // {
+    //     $this->fullname = $fullname;
+    //     return $this;
+    // }
+    #[ORM\PrePersist]
+    public function setFullname(): self
     {
-        $this->username = $username;
+        // Concaténation de "firstname lastname" => "John DOE"
+        $this->fullname = $this->firstname;               // John
+        $this->fullname.= " ";                            // espace
+        $this->fullname.= $this->lastname;                // DOE
 
         return $this;
     }
-    }
-
+    
+}
