@@ -4,34 +4,37 @@
 
 {% block body %}
 <div class="container mainDiv">
-    <table>
-        <tr class="titleShoppingCard">
+   <table>
+    <thead>
+        <tr>
             <th>Produit</th>
             <th>Quantité</th>
-            <th>Total</th>
+            <th>Prix unitaire</th>
+            <th>Prix total</th>
         </tr>
+    </thead>
+    <tbody>
+        {% for item in dataBasket %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.price * item.quantity }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
         <tr>
-            <td class="productInfo">
-
-            </td>
-            
-            <td class="productQuantity">
-                
-            </td>
-            <td class="productTotalPrice">
-                
-            </td>
+            <td colspan="3">Total</td>
+            <td>{{ total }}</td>
         </tr>
-
-
-
-
-    </table>
-
+    </tfoot>
+</table>
+{# 
     <div class="panierVide"> 
         <img src="{{ asset('build/images/panier-vide.png') }}" alt="panier vide">
         <h2 >Votre panier est vide</h2>
-    </div>
+    </div> #}
 
 
 </div>

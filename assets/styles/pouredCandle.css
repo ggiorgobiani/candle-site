@@ -2,19 +2,15 @@
     width: 220px;
     margin: auto;
 }
-
-
 .info-container{
     margin: 110px 200px 0 400px;
 }
-
 .info-container div{
     margin: 10px;
 }
 .btnListShowDetails{
     margin-top: 100px;
 }
-
 .addToCardBtn {
     background: #90f1a8;
 }
@@ -24,14 +20,17 @@
 .addToCardBtn:focus{
     outline: none;
 }
-.pouredCard {
+.card {
     cursor: pointer;
-    box-shadow: 0 7px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.4);
     height: 400px;
-    background-color: rgb(216, 215, 215);
+    background-color: rgb(216, 215, 215); 
+    text-decoration: none;
 }
-
-.titlePouredCandlePage {
+.card:hover{
+    transform: scale(1.1);
+}
+.titleCandlePage {
     text-align: center;
     margin: 30px 0 50px;
 }

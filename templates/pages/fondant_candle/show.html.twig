@@ -12,7 +12,7 @@
         <div><strong>Name:</strong> {{ fondant_candle.name }}</div>
         <div><strong>Description:</strong> {{ fondant_candle.description }}</div>
         <div><strong>Price:</strong> {{ fondant_candle.price }}</div>
-        <a class="btn addToCardBtn" href="{{ path('app_fondant_candle_index') }}">Ajouter au panier</a>
+        <a class="btn addToCardBtn" href="{{ path('basket_add', {'id': fondant_candle.id}) }}"><i class="fa-solid fa-cart-shopping me-1"></i>Ajouter au panier</a>
     </div>
 
     <div class="btnListShowDetails">
