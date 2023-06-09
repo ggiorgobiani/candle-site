@@ -14,7 +14,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class BasketController extends AbstractController
 {
     #[Route('/basket', name: 'basket')]
-    public function index(SessionInterface $sessionInterface,FondantCandleRepository $fondantCandleRepository, PouredCandleRepository $pouredCandleRepository): Response
+    public function index( SessionInterface $sessionInterface,FondantCandleRepository $fondantCandleRepository, PouredCandleRepository $pouredCandleRepository): Response
     {
         $basket =$sessionInterface->get("basket", []);
         $dataBasket = [];
@@ -23,15 +23,25 @@ class BasketController extends AbstractController
         foreach ($basket as $id => $quantity) {
             $fondantCandle = $fondantCandleRepository->find($id);
             $pouredCandle = $pouredCandleRepository->find($id);
-            $dataBasket = [
-                "product" => $fondantCandle, $pouredCandle,
+            
+            $dataBasket[] = [
+                "product" => [
+                    "fondantCandle" => $fondantCandle,
+                    "pouredCandle" => $pouredCandle,
+                ],
                 "quantity" => $quantity
             ];
-            $total += $fondantCandle->getPrice() * $quantity;
-            $total += $pouredCandle->getPrice() * $quantity;
+            
+            // ...
         }
+        
+        return $this->render('pages/basket/index.html.twig', [
+            "dataBasket" => $dataBasket,
+            "total" => $total,
+        ]);
+        
 
-        return $this->render('pages/basket/index.html.twig', compact("dataBasket", "total"));
+
     }
 
 
@@ -55,4 +65,7 @@ class BasketController extends AbstractController
     }
 
 
+    
+   
+  
 }

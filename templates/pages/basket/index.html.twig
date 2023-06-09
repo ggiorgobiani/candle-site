@@ -5,8 +5,8 @@
 {% block body %}
 <div class="container mainDiv">
    <table>
-    <thead>
-        <tr>
+    <thead class="titleShoppingCard">
+        <tr class="panierVide">
             <th>Produit</th>
             <th>Quantité</th>
             <th>Prix unitaire</th>
@@ -14,19 +14,24 @@
         </tr>
     </thead>
     <tbody>
+    {% set total_price = 0 %}
         {% for item in dataBasket %}
-            <tr>
-                <td>{{ item.id }}</td>
-                <td>{{ item.quantity }}</td>
-                <td>{{ item.price }}</td>
-                <td>{{ item.price * item.quantity }}</td>
-            </tr>
+        <tr>
+            <td><img class="imgInBasket" src="/uploads/{{ item.product.fondantCandle.image }}" alt="image basket"></td>
+            <td>{{ item.quantity }}</td>
+            <td>{{ item.product.fondantCandle.price }}</td>
+            <td>{{ item.product.fondantCandle.price * item.quantity }}</td>
+        </tr>
+
+    {% set total_price = total_price + (item.product.fondantCandle.price * item.quantity) %}
+
         {% endfor %}
+        
     </tbody>
     <tfoot>
         <tr>
-            <td colspan="3">Total</td>
-            <td>{{ total }}</td>
+            <td colspan="3"></td>
+            <td>Total: {{ total_price }}</td>
         </tr>
     </tfoot>
 </table>
@@ -36,6 +41,6 @@
         <h2 >Votre panier est vide</h2>
     </div> #}
 
-
+ 
 </div>
 {% endblock %}
