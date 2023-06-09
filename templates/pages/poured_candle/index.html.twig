@@ -24,8 +24,9 @@
 
 
 
-
+{% if is_granted('ROLE_ADMIN') %}
 <a class="btn btn-secondary" href="{{ path('app_poured_candle_new') }}">Create new</a>
+{% endif %}
 {% endblock %}
 
 

@@ -12,6 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 #[Route('/poured')]
+
 class PouredCandleController extends AbstractController
 {
     #[Route('/', name: 'app_poured_candle_index', methods: ['GET'])]
@@ -24,7 +25,8 @@ class PouredCandleController extends AbstractController
 
     #[Route('/new', name: 'app_poured_candle_new', methods: ['GET', 'POST'])]
     public function new(Filesystem $fs, Request $request, PouredCandleRepository $pouredCandleRepository): Response
-    {
+    {   
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $pouredCandle = new PouredCandle();
         $form = $this->createForm(PouredCandleType::class, $pouredCandle);
         $form->handleRequest($request);
@@ -86,6 +88,7 @@ class PouredCandleController extends AbstractController
     #[Route('/{id}/edit', name: 'app_poured_candle_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, PouredCandle $pouredCandle, PouredCandleRepository $pouredCandleRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(PouredCandleType::class, $pouredCandle);
         $form->handleRequest($request);
 

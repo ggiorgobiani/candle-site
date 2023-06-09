@@ -8,6 +8,9 @@ use App\Repository\UserRepository;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
+
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
@@ -42,6 +45,15 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     #[ORM\Column(name: "phone_number", type: Types::STRING, length: 20, nullable: true)]
     private ?string $phone_number = null;
+
+    // #[ORM\Column(length: 255, type: Types::STRING, nullable: false)]
+    // private ?string $city = null;
+
+    // #[ORM\Column(length: 10 , nullable: false )]
+    // private ?string $zip = null;
+
+    // #[ORM\Column(length: 80, type: Types::STRING, nullable: false)]
+    // private ?string $country = null;
 
   
 
@@ -194,5 +206,39 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
         return $this;
     }
-    
+    // public function getCity(): ?string
+    // {
+    //     return $this->city;
+    // }
+
+    // public function setCity(string $city): self
+    // {
+    //     $this->city = $city;
+
+    //     return $this;
+    // }
+
+    // public function getZip(): ?string
+    // {
+    //     return $this->zip;
+    // }
+
+    // public function setZip(string $zip): self
+    // {
+    //     $this->zip = $zip;
+
+    //     return $this;
+    // }
+
+    // public function getCountry(): ?string
+    // {
+    //     return $this->country;
+    // }
+
+    // public function setCountry(string $country): self
+    // {
+    //     $this->country = $country;
+
+    //     return $this;
+    // }
 }

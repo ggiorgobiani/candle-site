@@ -7,6 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
+
 class AccountController extends AbstractController
 {
     #[Route('/account', name: 'account')]
@@ -14,9 +15,10 @@ class AccountController extends AbstractController
     {
         $registrationForm = $this->createForm(RegistrationFormType::class);
 
-        
         return $this->render('pages/account/index.html.twig', [
+            'registrationForm' => $registrationForm->createView(),
             'controller_name' => 'AccountController',
         ]);
     }
 }
+
