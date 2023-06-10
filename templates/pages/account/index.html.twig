@@ -10,24 +10,18 @@
                 <img src="{{ asset('build/images/logo.png') }}" alt="logo accaunt page">
             </div>
             <div class="col-6" id="accFormDiv">
-                <div class="form-container">
+                <div class="form-container-fluid">
                     <div class="form-btn">
                         <span data-action="click->account#showLogin">Connexion</span>
                         <span data-action="click->account#showReg">Inscription</span>
                         <hr id="indicator">
                     </div>
                     <form id="loginForm">
-                        <input type="text" placeholder="username">
-                        <input type="password" placeholder="password">
-                        <button type="submit" class="btnConnection">Connexion </button>
-                        <a href="">Mot de pass oublié?</a>
+                        {% include "security/login.html.twig" %}
                     </form>
-                    <form id="regForm">
-                        <input type="text" placeholder="username">
-                        <input type="email" placeholder="Email">
-                        <input type="password" placeholder="password">
-                        <button type="submit" class="btnInscription">Inscription </button>
-                    </form>
+                     <form id="regForm">
+                     {% include "registration/register.html.twig" %}
+                     </form>
 
                 </div>
             </div>
