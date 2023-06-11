@@ -5,13 +5,14 @@ password
 address
 number phone
 
-----penser a ajouté l'adress pour User
------voir la class AbstractController
+----penser a ajouté l'adress pour User probleme avec le type string 
 ------city zip ne fonctionne pas pour l'enregistement 
------ incorporer register et login dans la vue 
-------faire une page profil qui recupére les donné de user
 ------voir s'il faut ajouté une restriction avant l'envoi du forme 
 ------trouver ou decaler la variable form (ne s'affiche pas sur account mais fonction sur /register)
 -----appeler la casse pour la Piece 
 -----commencé a faire le dossier
 ------entity admin a finir et crée un admin
+-------cree un admin 
+-------faire une option se souvenir de moi 
+------faire le cahier des charge 
+------faire le dossier 
