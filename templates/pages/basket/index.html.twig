@@ -17,7 +17,7 @@
     <tbody>
    
    
-    {# {% set total_price = 0 %}
+    {% set total_price = 0 %}
         {% for item in dataBasket %}
         <tr>
             <td><img class="imgInBasket" src="/uploads/{{ item.product.fondantCandle.image }}" alt="image basket"></td>
@@ -25,38 +25,43 @@
             <td>{{ item.product.fondantCandle.price }} €</td>
             <td>{{ item.product.fondantCandle.price * item.quantity }} €</td>
             <td> 
-            <a class="btn btn-success" href="{{ path('basket_add', {id: item.product.fondantCandle.id}) }}"><i class="fa-sharp fa-solid fa-cart-plus"></i></a>
-            <a class="btn btn-warning" href="{{ path('basket_remove', {id: item.product.fondantCandle.id}) }}"><i class="fa-solid fa-cart-minus"></i></a>
-            <a class="btn btn-danger" href="{{ path('basket_delete', {id: item.product.fondantCandle.id}) }}"><i class="fa-solid fa-cart-xmark"></i></a>
+            <a class="btn btn-success" href="{{ path('basket_add', {id: item.product.fondantCandle.id}) }}">+</a>
+            <a class="btn btn-warning" href="{{ path('basket_remove', {id: item.product.fondantCandle.id}) }}">-</a>
+            <a class="btn btn-danger" href="{{ path('basket_delete', {id: item.product.fondantCandle.id}) }}">x</a>
             </td>
-        </tr> #}
+        </tr>
 
-         {# <tr>
+             {# <tr>  
             <td><img class="imgInBasket" src="/uploads/{{ item.product.pouredCandle.image }}" alt="image basket"></td>
             <td>{{ item.quantity }}</td>
             <td>{{ item.product.pouredCandle.price }} €</td>
             <td>{{ item.product.pouredCandle.price * item.quantity }} €</td>
-        </tr> #}
+        </tr>   #}
 
-    {# {% set total_price = total_price + (item.product.fondantCandle.price * item.quantity) %}
+     {% set total_price = total_price + (item.product.fondantCandle.price * item.quantity) %}
 
     {% else %}
         <tr>
         <td colspan="5" class="text-center"> Votre panier est vide</td>
         </tr>
 
-        {% endfor %} #}
-
-       
+        {% endfor %}
         
     </tbody>
     <tfoot>
         <tr>
             <td colspan="3"></td>
-            {# <td>Total: {{ total_price }} €</td> #}
+            <td>Total: {{ total_price }} €</td>
+            
         </tr>
+        <tr>
+        <td colspan="3"></td>
+        <td>
+        <a class="btn btn-success" href="">Passer Commande</a>
+        </td></tr>
     </tfoot>
 </table>
+
 {# 
     <div class="panierVide"> 
         <img src="{{ asset('build/images/panier-vide.png') }}" alt="panier vide">

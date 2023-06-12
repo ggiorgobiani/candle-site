@@ -32,7 +32,6 @@ class BasketController extends AbstractController
                 "quantity" => $quantity
             ];
             
-            // ...
         }
         
         return $this->render('pages/basket/index.html.twig', [
@@ -64,7 +63,42 @@ class BasketController extends AbstractController
          return $this->redirectToRoute("basket");
     }
 
+    #[Route("/remove/{id}", name: 'basket_remove')]
+    public function remove($id, FondantCandle $fondantCandle, PouredCandle $pouredCandle, SessionInterface $sessionInterface)
+    {
+        //recuperer la panier actuel
+        $basket = $sessionInterface->get("basket", []);
+        $id = $fondantCandle->getId();
+        $id = $pouredCandle->getId();
 
+        if(!empty($basket[$id])){
+            $basket[$id]--;
+        }else{
+            $basket[$id] =1;
+        }
+
+        $sessionInterface->set("basket", $basket);
+
+         return $this->redirectToRoute("basket");
+    }
+
+    #[Route("/delete/{id}", name: 'basket_delete')]
+    public function delete($id, FondantCandle $fondantCandle, PouredCandle $pouredCandle, SessionInterface $sessionInterface)
+    {
+        //recuperer la panier actuel
+        $basket = $sessionInterface->get("basket", []);
+        $id = $fondantCandle->getId();
+        $id = $pouredCandle->getId();
+
+        if(!empty($basket[$id])){
+            unset($basket[$id]);
+        }
+
+        $sessionInterface->set("basket", $basket);
+
+         return $this->redirectToRoute("basket");
+    }
+  
     
    
   

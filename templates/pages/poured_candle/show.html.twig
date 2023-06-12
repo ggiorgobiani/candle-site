@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}PouredCandle{% endblock %}
+{% block title %}Bougie coulée{% endblock %}
 
 {% block body %}
-    <h1>PouredCandle</h1>
+    <h1 class="text-center">Bougie Collection {{ poured_candle.name }} </h1>
 
     <div class="container">
         <img class="imgShowProductDescription" src="/uploads/{{ poured_candle.image }}" style="width: 350px; float: left;" alt="">
@@ -12,7 +12,7 @@
         <div><strong>Name:</strong> {{ poured_candle.name }}</div>
         <div><strong>Description:</strong> {{ poured_candle.description }}</div>
         <div><strong>Price:</strong> {{ poured_candle.price }} €</div>
-        <a class="btn addToCardBtn" href="{{ path('app_poured_candle_index', {'id': poured_candle.id}) }}"><i class="fa-solid fa-cart-shopping me-1"></i>Ajouter au panier</a>
+        <a class="btn addToCardBtn" href="{{ path('basket_add', {'id': poured_candle.id }) }}"><i class="fa-solid fa-cart-shopping me-1"></i>Ajouter au panier</a>
     </div>
 
     <div class="btnListShowDetails">
@@ -22,4 +22,6 @@
     
     {{ include('pages/poured_candle/_delete_form.html.twig') }}
     </div>
+
+    
 {% endblock %}

@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}FondantCandle{% endblock %}
+{% block title %}Bougies Fondants{% endblock %}
 
 {% block body %}
-    <h1>FondantCandle</h1>
+    <h1 class="text-center">Bougie Collection {{ fondant_candle.name }} </h1>
 
     <div class="container">
         <img class="imgShowProductDescription" src="/uploads/{{ fondant_candle.image }}" style="width: 350px; float: left;" alt="">
@@ -23,4 +23,7 @@
 
     {{ include('pages/fondant_candle/_delete_form.html.twig') }}
     </div>
+
+
+    
 {% endblock %}
