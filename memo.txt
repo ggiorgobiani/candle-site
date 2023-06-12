@@ -5,6 +5,10 @@ password
 address
 number phone
 
+
+----
+-----mots de passe perdu 
+----fonctionalité de suppression de compte 
 ----penser a ajouté l'adress pour User probleme avec le type string 
 ------city zip ne fonctionne pas pour l'enregistement 
 ------voir s'il faut ajouté une restriction avant l'envoi du forme 

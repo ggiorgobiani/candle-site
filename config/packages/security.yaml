@@ -39,7 +39,7 @@ security:
     access_control:
         #- { path: ^/fondant/new, roles: ROLE_ADMIN }
        
-        - { path: ^/poured, roles: ROLE_USER }
+        #- { path: ^/poured, roles: ROLE_USER }
         #- { path: ^/fondant, roles: ROLE_ADMIN }
        # - { path: /fondant_candle/_delete_form.html.twig, roles: ROLE_ADMIN }
         #- { path: /fondant_candle/new, roles: ROLE_ADMIN }

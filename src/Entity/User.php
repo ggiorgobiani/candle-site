@@ -2,20 +2,22 @@
 
 namespace App\Entity;
 
+use Symfony\Component\Validator\Constraints as Assert;
+
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
-use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
-
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[UniqueEntity(fields: ['email'], message: 'There is already an account with this email')]
+#[ORM\HasLifecycleCallbacks()]
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
+
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
@@ -33,43 +35,55 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?string $password = null;
 
-    #[ORM\Column(name: "firstname", type: Types::STRING,length: 60, nullable: true)]
+
+    
+//firstname
+    #[ORM\Column(length: 40)]
     private ?string $firstname = null;
-
-    #[ORM\Column(name: "lastname", type: Types::STRING,length: 60, nullable: true)]
+//lastname
+    #[ORM\Column(length: 40)]
     private ?string $lastname = null;
+//phone
+    #[ORM\Column(length: 40)]
+    private ?string $phone = null;
+//street
+    #[ORM\Column(length: 40)]
+    private ?string $street = null;
+//street number
+    #[ORM\Column(length: 40)]
+    private ?string $streetNumber = null;
+//zip code
+    #[ORM\Column(length: 40)]
+    private ?string $zip = null;
+//city
+    #[ORM\Column(length: 40)]
+    private ?string $city = null;
+//country
+    #[ORM\Column(length: 40)]
+    private ?string $country = null;
 
 
-    #[ORM\Column(length: 81)]
-    private ?string $fullname = null;
+    // NOTE: définition de la valeur par défaut
+    #[ORM\Column]
+    // private ?int $connectionsCounter = null;
+    private int $connectionsCounter = 0;
 
-    #[ORM\Column(name: "phone_number", type: Types::STRING, length: 20, nullable: true)]
-    private ?string $phone_number = null;
+    #[ORM\Column]
+    private ?\DateTimeImmutable $registerAt = null;
 
-    // #[ORM\Column(length: 255, type: Types::STRING, nullable: false)]
-    // private ?string $city = null;
-
-    // #[ORM\Column(length: 10 , nullable: false )]
-    // private ?string $zip = null;
-
-    // #[ORM\Column(length: 80, type: Types::STRING, nullable: false)]
-    // private ?string $country = null;
-
-  
-
-
-
+    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
+    private ?\DateTimeInterface $lastLoginAt = null;
+    //id 
     public function getId(): ?int
     {
         return $this->id;
     }
-
+//email 
     public function getEmail(): ?string
     {
         return $this->email;
     }
-
-    public function setEmail(string $email): static
+    public function setEmail(string $email): self
     {
         $this->email = $email;
 
@@ -106,7 +120,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return array_unique($roles);
     }
 
-    public function setRoles(array $roles): static
+    public function setRoles(array $roles): self
     {
         $this->roles = $roles;
 
@@ -121,7 +135,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->password;
     }
 
-    public function setPassword(string $password): static
+    public function setPassword(string $password): self
     {
         $this->password = $password;
 
@@ -142,18 +156,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @see UserInterface
      */
-    public function eraseCredentials(): void
+    public function eraseCredentials()
     {
         // If you store any temporary, sensitive data on the user, clear it here
         // $this->plainPassword = null;
     }
-    
+
     public function getFirstname(): ?string
     {
         return $this->firstname;
     }
 
-    public function setFirstname(?string $firstname): self
+    public function setFirstname(string $firstname): self
     {
         $this->firstname = $firstname;
 
@@ -165,80 +179,131 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->lastname;
     }
 
-    public function setLastname(?string $lastname): self
+    public function setLastname(string $lastname): self
     {
         $this->lastname = $lastname;
 
         return $this;
     }
-
-  
-
-    public function getPhoneNumber(): ?string
+    public function getPhone(): ?string
     {
-        return $this->phone_number;
+        return $this->phone;
     }
-
-    public function setPhoneNumber(?string $phone_number): self
+    public function setPhone(string $phone): self
     {
-        $this->phone_number = $phone_number;
+        $this->phone = $phone;
 
         return $this;
     }
-    public function getFullname(): ?string
+    public function getStreet(): ?string
     {
-        return $this->fullname;
+        return $this->street;
+    }
+    public function setStreet(string $street): self
+    {
+        $this->street = $street;
+
+        return $this;
+    }
+    public function getStreetNumber(): ?string
+    {
+        return $this->streetNumber;
+    }
+    public function setStreetNumber(string $streetNumber): self
+    {
+        $this->streetNumber = $streetNumber;
+
+        return $this;
+    }
+    public function getZip(): ?string
+    {
+        return $this->zip;
+    }
+    public function setZip(string $zip): self
+    {
+        $this->zip = $zip;
+
+        return $this;
+    }
+    public function getCity(): ?string
+    {
+        return $this->city;
+    }
+    public function setCity(string $city): self
+    {
+        $this->city = $city;
+
+        return $this;
+    }
+    public function getCountry(): ?string
+    {
+        return $this->country;
     }
 
-    // NOTE: Automatiosation de la génération du "fullname"
-    // public function setFullname(string $fullname): self
+    public function setCountry(string $country): self
+    {
+        $this->country = $country;
+
+        return $this;
+    }
+
+    public function getConnectionsCounter(): ?int
+    {
+        return $this->connectionsCounter;
+    }
+
+    // NOTE: Automatisation de l'incrémentation
+    // public function setConnectionsCounter(int $connectionsCounter): self
     // {
-    //     $this->fullname = $fullname;
+    //     $this->connectionsCounter = $connectionsCounter;
+    //     return $this;
+    // }
+    public function setConnectionsCounter(): self
+    {
+        // Incrémentation du compteur
+        $this->connectionsCounter++;
+
+        return $this;
+    }
+
+    public function getRegisterAt(): ?\DateTimeImmutable
+    {
+        return $this->registerAt;
+    }
+
+    // NOTE: Automatisation de l'injection de la donnée
+    // public function setRegisterAt(\DateTimeImmutable $registerAt): self
+    // {
+    //     $this->registerAt = $registerAt;
     //     return $this;
     // }
     #[ORM\PrePersist]
-    public function setFullname(): self
+    public function setRegisterAt(): self
     {
-        // Concaténation de "firstname lastname" => "John DOE"
-        $this->fullname = $this->firstname;               // John
-        $this->fullname.= " ";                            // espace
-        $this->fullname.= $this->lastname;                // DOE
+        $this->registerAt = new \DateTimeImmutable;
 
         return $this;
     }
-    // public function getCity(): ?string
-    // {
-    //     return $this->city;
-    // }
 
-    // public function setCity(string $city): self
-    // {
-    //     $this->city = $city;
+    public function getLastLoginAt(): ?\DateTimeInterface
+    {
+        return $this->lastLoginAt;
+    }
 
+    // Note: Automatisation de l'injection de la donnée
+    //xxx->setLastLoginAt(new \DateTime) 
+    // public function setLastLoginAt(?\DateTimeInterface $lastLoginAt): self
+    // {
+    //     $this->lastLoginAt = $lastLoginAt;
     //     return $this;
     // }
 
-    // public function getZip(): ?string
-    // {
-    //     return $this->zip;
-    // }
+    // xxxx->setLastLoginAt()
+    // #[ORM\PreUpdate]
+    public function setLastLoginAt(): self
+    {
+        $this->lastLoginAt = new \DateTime;
 
-    // public function setZip(string $zip): self
-    // {
-    //     $this->zip = $zip;
-
-    //     return $this;
-    // }
-
-    // public function getCountry(): ?string
-    // {
-    //     return $this->country;
-    // }
-
-    // public function setCountry(string $country): self
-    // {
-    //     $this->country = $country;
-
-    //     return $this;
-    // }
+        return $this;
+    }
 }
