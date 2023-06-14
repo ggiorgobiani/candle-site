@@ -42,7 +42,7 @@ class PouredCandleType extends AbstractType
 
                 
                 'attr' => [
-                    'style' => 'width: 300px',
+                    'style' => 'width: 700px',
                     // 'class' => "my-awesome-style",
                     'placeholder' => "Saisir la description du livre",
                     'maxLength' => $descriptionMaxLength

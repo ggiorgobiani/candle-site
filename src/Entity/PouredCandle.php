@@ -32,13 +32,9 @@ class PouredCandle
     #[ORM\Column(length: 40)]
     private ?string $image = null;
 
-    #[ORM\ManyToMany(targetEntity: OrderProduct::class, mappedBy: 'pouredCandle')]
-    private Collection $orderProducts;
+    
 
-    public function __construct()
-    {
-        $this->orderProducts = new ArrayCollection();
-    }
+    
 
     public function getId(): ?int
     {
@@ -105,30 +101,5 @@ class PouredCandle
         return $this;
     }
 
-    /**
-     * @return Collection<int, OrderProduct>
-     */
-    public function getOrderProducts(): Collection
-    {
-        return $this->orderProducts;
-    }
-
-    public function addOrderProduct(OrderProduct $orderProduct): static
-    {
-        if (!$this->orderProducts->contains($orderProduct)) {
-            $this->orderProducts->add($orderProduct);
-            $orderProduct->addPouredCandle($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrderProduct(OrderProduct $orderProduct): static
-    {
-        if ($this->orderProducts->removeElement($orderProduct)) {
-            $orderProduct->removePouredCandle($this);
-        }
-
-        return $this;
-    }
+    
 }

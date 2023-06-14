@@ -37,11 +37,11 @@ security:
     # Easy way to control access for large sections of your site
     # Note: Only the *first* access control that matches will be used
     access_control:
-        #- { path: ^/fondant/new, roles: ROLE_ADMIN }
-       
-        #- { path: ^/poured, roles: ROLE_USER }
+        # - { path: ^/fondant/new, roles: ROLE_ADMIN }
+    
+        # - { path: ^/poured/new, roles: ROLE_ADMIN }
         #- { path: ^/fondant, roles: ROLE_ADMIN }
-       # - { path: /fondant_candle/_delete_form.html.twig, roles: ROLE_ADMIN }
+        #- { path: /fondant_candle/_delete_form.html.twig, roles: ROLE_ADMIN }
         #- { path: /fondant_candle/new, roles: ROLE_ADMIN }
 
 when@test:

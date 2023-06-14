@@ -14,7 +14,7 @@
         <img class="card-img-top imgCard" src="/uploads/{{ fondant_candle.image }}" alt="Candle Image">
         <div class="card-body">
           <h4 class="card-title">Collection: {{ fondant_candle.name }}</h4>
-          <p class="card-text">Price: {{ fondant_candle.price }}</p>
+          <p class="card-text">Price: {{ fondant_candle.price }} €</p>
         </div>
       </a>
     </div>
@@ -22,7 +22,7 @@
 </div>
 {# {% if is_granted('ROLE_ADMIN') %} #}
 <a class="btn btn-secondary" href="{{ path('app_fondant_candle_new') }}">Create new</a>
-
+ {# {% endif %} #}
 {% endblock %}
 
 
