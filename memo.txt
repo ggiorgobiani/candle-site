@@ -1,0 +1,17 @@
+User
+firstName
+lastName
+password
+address
+number phone
+
+----penser a ajouté l'adress pour User
+-----voir la class AbstractController
+------city zip ne fonctionne pas pour l'enregistement 
+----- incorporer register et login dans la vue 
+------faire une page profil qui recupére les donné de user
+------voir s'il faut ajouté une restriction avant l'envoi du forme 
+------trouver ou decaler la variable form (ne s'affiche pas sur account mais fonction sur /register)
+-----appeler la casse pour la Piece 
+-----commencé a faire le dossier
+------entity admin a finir et crée un admin
