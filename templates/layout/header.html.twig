@@ -65,8 +65,16 @@
           <li class="nav-item mx-2 text-uppercase">
             {% include "components/nav-link/index.html.twig" with
                         {
-                            route: 'account',
+                            route: 'app_login',
                             label: 'S\'identifier'
+                        }
+                     %}
+          </li><i class="fa-solid fa-circle-user me-1"></i>
+           <li class="nav-item mx-2 text-uppercase">
+            {% include "components/nav-link/index.html.twig" with
+                        {
+                            route: 'register',
+                            label: 'S\'inscire'
                         }
                      %}
           </li><i class="fa-solid fa-circle-user me-1"></i>
