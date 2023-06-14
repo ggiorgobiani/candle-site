@@ -5,7 +5,7 @@
 {% block body %}
 <div class="container mainDiv">
    <table>
-    <thead class="titleShoppingCard ">
+    <thead class="titleShoppingCard">
         <tr class="panierVide">
             <th>Produit</th>
             <th>Quantité</th>
@@ -15,9 +15,7 @@
         </tr>
     </thead>
     <tbody>
-   
-   
-    {% set total_price = 0 %}
+       {% set total_price = 0 %}
         {% for item in dataBasket %}
         <tr>
             <td><img class="imgInBasket" src="/uploads/{{ item.product.fondantCandle.image }}" alt="image basket"></td>
@@ -31,34 +29,38 @@
             </td>
         </tr>
 
-             {# <tr>  
+              <tr>  
             <td><img class="imgInBasket" src="/uploads/{{ item.product.pouredCandle.image }}" alt="image basket"></td>
             <td>{{ item.quantity }}</td>
             <td>{{ item.product.pouredCandle.price }} €</td>
             <td>{{ item.product.pouredCandle.price * item.quantity }} €</td>
-        </tr>   #}
+             <td> 
+            <a class="btn btn-success" href="{{ path('basket_add', {id: item.product.pouredCandle.id}) }}">+</a>
+            <a class="btn btn-warning" href="{{ path('basket_remove', {id: item.product.pouredCandle.id}) }}">-</a>
+            <a class="btn btn-danger" href="{{ path('basket_delete', {id: item.product.pouredCandle.id}) }}">x</a>
+            </td>
+        </tr>  
 
-     {% set total_price = total_price + (item.product.fondantCandle.price * item.quantity) %}
-
+        {% set total_price = total_price + (item.product.fondantCandle.price * item.quantity) %}
+        {% set total_price = total_price + (item.product.pouredCandle.price * item.quantity) %}
     {% else %}
         <tr>
         <td colspan="5" class="text-center"> Votre panier est vide</td>
         </tr>
 
         {% endfor %}
-        
     </tbody>
     <tfoot>
         <tr>
             <td colspan="3"></td>
             <td>Total: {{ total_price }} €</td>
-            
         </tr>
         <tr>
-        <td colspan="3"></td>
-        <td>
-        <a class="btn btn-success" href="">Passer Commande</a>
-        </td></tr>
+            <td colspan="3"></td>
+            <td>
+                <a class="btn btn-success" href="#">Passer au Payment</a>
+            </td>
+        </tr>
     </tfoot>
 </table>
 

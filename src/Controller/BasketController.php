@@ -32,6 +32,7 @@ class BasketController extends AbstractController
                 "quantity" => $quantity
             ];
             
+            // ...
         }
         
         return $this->render('pages/basket/index.html.twig', [

@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use App\Repository\UserRepository;
@@ -34,6 +36,18 @@ class User
 
     #[ORM\Column(name: "username", length: 40, type: Types::STRING, nullable: false)]
     private ?string $username = null;
+
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: orderProduct::class)]
+    private Collection $order_product;
+
+    #[ORM\OneToMany(mappedBy: 'User', targetEntity: OrderProduct::class)]
+    private Collection $orderProducts;
+
+    public function __construct()
+    {
+        $this->order_product = new ArrayCollection();
+        $this->orderProducts = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -120,6 +134,44 @@ class User
         $this->username = $username;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, orderProduct>
+     */
+    public function getOrderProduct(): Collection
+    {
+        return $this->order_product;
+    }
+
+    public function addOrderProduct(orderProduct $orderProduct): static
+    {
+        if (!$this->order_product->contains($orderProduct)) {
+            $this->order_product->add($orderProduct);
+            $orderProduct->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeOrderProduct(orderProduct $orderProduct): static
+    {
+        if ($this->order_product->removeElement($orderProduct)) {
+            // set the owning side to null (unless already changed)
+            if ($orderProduct->getUser() === $this) {
+                $orderProduct->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, OrderProduct>
+     */
+    public function getOrderProducts(): Collection
+    {
+        return $this->orderProducts;
     }
     }
 
