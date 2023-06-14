@@ -93,5 +93,6 @@
   "build/images/logo.png": "/build/images/logo.c00b9b50.png",
   "build/fonts/fa-v4compatibility.ttf": "/build/fonts/fa-v4compatibility.0e3a648b.ttf",
   "build/images/logo.jpg": "/build/images/logo.bcc3b750.jpg",
-  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.68577e40.woff2"
+  "build/fonts/fa-v4compatibility.woff2": "/build/fonts/fa-v4compatibility.68577e40.woff2",
+  "build/node_modules_symfony_stimulus-bridge_dist_webpack_loader_js_assets_controllers_json-assets_bo-de38ef.js": "/build/node_modules_symfony_stimulus-bridge_dist_webpack_loader_js_assets_controllers_json-assets_bo-de38ef.js"
 }
