@@ -2,7 +2,6 @@
 
 namespace App\Entity;
 
-use Symfony\Component\Validator\Constraints as Assert;
 
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -63,17 +62,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private ?string $country = null;
 
 
-    // NOTE: définition de la valeur par défaut
-    #[ORM\Column]
-    // private ?int $connectionsCounter = null;
-    private int $connectionsCounter = 0;
-
-    #[ORM\Column]
-    private ?\DateTimeImmutable $registerAt = null;
-
-    #[ORM\Column(type: Types::DATETIME_MUTABLE, nullable: true)]
-    private ?\DateTimeInterface $lastLoginAt = null;
-    //id 
     public function getId(): ?int
     {
         return $this->id;
@@ -285,9 +273,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getLastLoginAt(): ?\DateTimeInterface
-    {
-        return $this->lastLoginAt;
+
     }
 
     // Note: Automatisation de l'injection de la donnée

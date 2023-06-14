@@ -41,7 +41,6 @@ class PouredCandleType extends AbstractType
                 'required' => false,
 
                 
-
                 'attr' => [
                     'style' => 'width: 300px',
                     // 'class' => "my-awesome-style",
