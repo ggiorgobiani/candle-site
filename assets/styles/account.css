@@ -40,44 +40,8 @@ form input {
     padding: 0 10px;
     border: 1px solid #ccc;
 }
-.btnInscription, .btnConnection{
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-    background: #90f1a8;
-    border-radius: 30px;
-}
-.btnConnection:hover{
-    background: #64df83;
-}
-.btnConnection:focus{
-    outline: none;
-}
-.btnInscription:hover{
-    background: #64df83;
-}
-.btnInscription:focus{
-    outline: none;
-}
-#loginForm{
-    left:  -300px;
-}
-#regForm{
-    left: 0;
-}
-form a {
-    font-size: 12px;
-}
-#indicator{
-    width: 100px;
-    border: none;
-    background: #64df83;
-    height: 3px;
-    margin-top: 8px;
-    transform: translateX(100px);
-    transition: transform 1s;
-}
+
+
 
 .imgDiv{
     text-align: center;
@@ -104,3 +68,12 @@ body{
     }
 
   }
+
+
+#registerForm{
+    margin: 3rem 0 3rem 0;
+}
+#registration_form_agreeTerms{
+    width: 30px;
+    height: 30px;
+}

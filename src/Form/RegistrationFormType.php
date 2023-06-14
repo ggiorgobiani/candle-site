@@ -36,37 +36,40 @@ class RegistrationFormType extends AbstractType
                 // FormType du champ à répéter
                 'type' => EmailType::class,
 
+                
                 // Definir le premier champ comme Obligatoire
                 'required' => true,
 
                 // Label global
-                // 'label' => "Your Email",
+                 'label' => "Your Email",
 
                 // Options appliquées sur les deux champ
                 // 'options' => ['attr' => ['class' => 'password-field']],
                 
                 // Options du premier champ
-                'first_options'  => [
+                'first_options' => [
                     'label' => 'Email',
-                    'label_attr' => [
-                        'hidden' => "hidden"
-                    ],
+                    
                     'attr' => [
-                        'placeholder' => 'Email'
+                        'placeholder' => 'Email',
+                        'style' => 'width: 300px',
+                        'class' => 'form-control'
                     ],
                     'constraints' => [
                         new Email(['message' => "email invalide"]),
                     ]
                 ],
+                    
+
                 
                 // Option du champ de répétition
                 'second_options' => [
                     'label' => 'Email confirmation',
-                    'label_attr' => [
-                        'hidden' => "hidden"
-                    ],
+                   
                     'attr' => [
-                        'placeholder' => 'Email de confirmation'
+                        'placeholder' => 'Email de confirmation',
+                        'style' => 'width: 300px',
+                        'class' => 'form-control'
                     ]
                 ],
                 
@@ -84,11 +87,11 @@ class RegistrationFormType extends AbstractType
 
                 'first_options'  => [
                     'label' => 'mots de passe',
-                    'label_attr' => [
-                        'hidden' => "hidden"
-                    ],
+                    
                     'attr' => [
-                        'placeholder' => 'mots de passe'
+                        'placeholder' => 'Mot de passe',
+                        'style' => 'width: 300px',
+                        'class' => 'form-control'
                     ],
 
                     'constraints' => [
@@ -104,12 +107,12 @@ class RegistrationFormType extends AbstractType
                     ],
                 ],
                 'second_options' => [
-                    'label' => 'mots de passe',
-                    'label_attr' => [
-                        'hidden' => "hidden"
-                    ],
+                    'label' => 'Confirmation de mot de passe',
+                    
                     'attr' => [
-                        'placeholder' => 'confirmation mots de passe'
+                        'placeholder' => 'confirmation mots de passe',
+                        'style' => 'width: 300px',
+                        'class' => 'form-control'
                     ],
                 ],
 
@@ -122,7 +125,9 @@ class RegistrationFormType extends AbstractType
                 'label' => "Nom",
                 'required' => true,
                 'attr' => [
-                    'placeholder' => "Nom"
+                    'placeholder' => "Nom",
+                    'style' => 'width: 300px',
+                    'class' => 'form-control'
                 ],
                 'constraints' => [],
             ])
@@ -132,7 +137,9 @@ class RegistrationFormType extends AbstractType
                 'label' => "Prénom",
                 'required' => true,
                 'attr' => [
-                    'placeholder' => "Prénom"
+                    'placeholder' => "Prénom",
+                    'style' => 'width: 300px',
+                    'class' => 'form-control'
                 ],
                 'constraints' => [],
             ])
@@ -142,7 +149,9 @@ class RegistrationFormType extends AbstractType
                 'label' => "Numéro de téléphone",
                 'required' => true,
                 'attr' => [
-                    'placeholder' => "telephone"
+                    'placeholder' => "telephone",
+                    'style' => 'width: 300px',
+                    'class' => 'form-control'
                 ],
                 'constraints' => [],
             ])
@@ -153,15 +162,19 @@ class RegistrationFormType extends AbstractType
             'label' => "rue",
             'required' => true,
             'attr' => [
-                'placeholder' => "nom de la  rue"
+                'placeholder' => "nom de la  rue",
+                'style' => 'width: 300px',
+                'class' => 'form-control'
             ],
             'constraints' => [],
         ])
         ->add('streetNumber', TextType::class, [
-            'label' => "Your street number",
+            'label' => "Numero de la rue",
             'required' => true,
             'attr' => [
-                'placeholder' => "Numero de la rue"
+                'placeholder' => "Numero de la rue",
+                'style' => 'width: 300px',
+                'class' => 'form-control'
             ],
             'constraints' => [],
         ])
@@ -169,7 +182,9 @@ class RegistrationFormType extends AbstractType
             'label' => "Ville",
             'required' => true,
             'attr' => [
-                'placeholder' => "Votre ville"
+                'placeholder' => "Votre ville",
+                'style' => 'width: 300px',
+                'class' => 'form-control'
             ],
             'constraints' => [],
         ])
@@ -179,7 +194,9 @@ class RegistrationFormType extends AbstractType
                 'label' => "Code postal",
                 'required' => true,
                 'attr' => [
-                    'placeholder' => "code postal"
+                    'placeholder' => "code postal",
+                    'style' => 'width: 300px',
+                    'class' => 'form-control'
                 ],
                 'constraints' => [],
             ])
@@ -195,6 +212,10 @@ class RegistrationFormType extends AbstractType
                 'placeholder' => "selectionner votre pays",
                 'data' => $country,
                 'constraints' => [],
+                'attr' => [
+                    'style' => 'width: 300px',
+                    'class' => 'form-control'
+                ],
             ])
         ;
 

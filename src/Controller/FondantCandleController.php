@@ -25,6 +25,7 @@ class FondantCandleController extends AbstractController
     #[Route('/new', name: 'app_fondant_candle_new', methods: ['GET', 'POST'])]
     public function new(Filesystem $fs, Request $request, FondantCandleRepository $fondantCandleRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $fondantCandle = new FondantCandle();
         $form = $this->createForm(FondantCandleType::class, $fondantCandle);
         $form->handleRequest($request);
@@ -89,6 +90,7 @@ class FondantCandleController extends AbstractController
     #[Route('/{id}/edit', name: 'app_fondant_candle_edit', methods: ['GET', 'POST'])]
     public function edit(Request $request, FondantCandle $fondantCandle, FondantCandleRepository $fondantCandleRepository): Response
     {
+        $this->denyAccessUnlessGranted('ROLE_ADMIN');
         $form = $this->createForm(FondantCandleType::class, $fondantCandle);
         $form->handleRequest($request);
 
