@@ -23,3 +23,16 @@
     margin: 30px 0 50px;
 }
 
+.btnListShowDetails{
+    margin-top: 100px;
+}
+
+.addToCardBtn {
+    background: #90f1a8;
+}
+.addToCardBtn:hover{
+    background: #64df83;
+}
+.addToCardBtn:focus{
+    outline: none;
+}
