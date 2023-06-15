@@ -8,18 +8,6 @@
 .info-container div{
     margin: 10px;
 }
-.btnListShowDetails{
-    margin-top: 100px;
-}
-.addToCardBtn {
-    background: #90f1a8;
-}
-.addToCardBtn:hover{
-    background: #64df83;
-}
-.addToCardBtn:focus{
-    outline: none;
-}
 .card {
     cursor: pointer;
     box-shadow: 7px 7px 8px rgba(0, 0, 0, 0.4);
@@ -34,3 +22,4 @@
     text-align: center;
     margin: 30px 0 50px;
 }
+

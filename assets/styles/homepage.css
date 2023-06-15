@@ -19,6 +19,7 @@ body{
   footer{
     margin-top: auto;
   }
+
   #menuNav{
       border: none;
   }
@@ -78,17 +79,7 @@ body{
     cursor: pointer;
   }
   
-  @media (max-width: 768px) {
-    .aboutImg img{
-      width: 400px ;
-      height: 250px ;
-      transform: translateX(-40%);
-    transition: transform 1s ease;
-    }
-    .aboutImg img.move {
-      transform: translateX(10%);
-    }
-  }
+  
 
   @media (max-width: 568px) {
     .aboutImg img{
@@ -102,3 +93,16 @@ body{
     }
 
   }
+  @media (max-width: 768px) {
+    .aboutImg img{
+      width: 400px ;
+      height: 250px ;
+      transform: translateX(-40%);
+    transition: transform 1s ease;
+    }
+    .aboutImg img.move {
+      transform: translateX(10%);
+    }
+  }
+  
+  

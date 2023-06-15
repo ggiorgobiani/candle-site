@@ -8,7 +8,7 @@
 
 <div class="row">
   {% for poured_candle in poured_candles %}
-    <div class="col-md-4">
+    <div class="col-md-6 col-lg-4 ">
       <a href="{{ path('app_poured_candle_show', {'id': poured_candle.id}) }}" class="card pouredCard my-4">
         <img class="card-img-top imgpoured" src="/uploads/{{ poured_candle.image }}" alt="Candle Image">
         <div class="card-body">
